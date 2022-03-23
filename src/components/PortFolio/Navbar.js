@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import RubberBand from 'react-reveal/RubberBand';
-import { GiArrowDunk } from 'react-icons/gi'
-import {GiReturnArrow} from 'react-icons/gi'
 import Flip from 'react-reveal/Flip';
 import About from './About'
 import Blog from './Blog'
@@ -14,7 +12,6 @@ import Resume from './Resume'
 import './Portfolio.css'
 
 const Navbar = props => {
-    // const [mobileNav, setMobileNav] = useState(false)
 
     const NavButtons = [
         {
@@ -51,14 +48,7 @@ const Navbar = props => {
 
     return (
         <div style={{ display: props.display ? "none" : "grid" }} className='bg-neutral-300'>
-            {/* <div className="flex md:hidden lg:hidden justify-center">
-                <button onClick={() => setMobileNav(!mobileNav)}
-                    className="flex space-x-3 mr-2 font-semibold bg-gradient-to-r from-slate-800 via-slate-700 to-slate-700 
-                            text-gray-200 ring-2 ring-indigo-500  rounded-tr-lg rounded-bl-lg px-40 py-2 my-4
-                            hover:bg-white hover:ring-slate-300 mx-2 hover:text-indigo-600 ">
-                   {mobileNav ? <GiReturnArrow color="white" size="1.4rem" /> : <GiArrowDunk color="white" size="1.4rem" /> }
-                </button>
-            </div> */}
+         
             <div>
                 <div className="portfolio--header">
                     {

@@ -1,5 +1,5 @@
 import React from 'react'
-import ResumeLink from './Shubham.pdf'
+import ResumeLink from './Shubham_Resume.pdf'
 import { FcDocument } from 'react-icons/fc'
 
 function Resume() {
