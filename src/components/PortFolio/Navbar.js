@@ -48,7 +48,6 @@ const Navbar = props => {
 
     return (
         <div style={{ display: props.display ? "none" : "grid" }} className='bg-neutral-300'>
-         
             <div>
                 <div className="portfolio--header">
                     {

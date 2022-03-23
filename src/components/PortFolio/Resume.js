@@ -1,5 +1,5 @@
 import React from 'react'
-import ResumeLink from './Shubham_Resume.pdf'
+import ResumeLink from './ShubhamResume.pdf'
 import { FcDocument } from 'react-icons/fc'
 
 function Resume() {
@@ -12,6 +12,7 @@ function Resume() {
                     <FcDocument size='2.5rem' style={{ margin: "0 0.5rem" }} />
                 </h1>
                 <iframe
+                    title="Resume"
                     src={ResumeLink}
                     frameBorder="0"
                     scrolling="auto"
