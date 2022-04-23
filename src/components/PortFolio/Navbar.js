@@ -45,8 +45,7 @@ const Navbar = props => {
             color:" ring-slate-300"
         }
     ]
-    const buttonStyling = `navbar-buttons flex space-x-3 font-semibold bg-gradient-to-r from-violet-100 via-violet-200 to-violet-300
-    ring-1 rounded-tl-lg rounded-br-lg px-5 py-2 ring-2 ring-white`;
+    const buttonStyling = `gradient-border flex space-x-3 font-semibold text-slate-200 px-5 py-2`;
 
 
     return (
