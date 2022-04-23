@@ -16,38 +16,43 @@ const Navbar = props => {
     const NavButtons = [
         {
             link: "/about",
-            linkName: "About"
+            linkName: "About",
+            color:" ring-slate-300 "
         },
         {
             link: "/skills",
-            linkName: "Skills"
+            linkName: "Skills",
+            color: " ring-slate-300 "
         },
         {
             link: "/projects",
-            linkName: "Projects"
+            linkName: "Projects",
+            color: " ring-slate-300 "
         },
         {
             link: "/blogs",
-            linkName: "Blogs"
+            linkName: "Blogs",
+            color: " ring-slate-300 "
         },
         {
             link: "/contact",
-            linkName: "Contact"
+            linkName: "Contact",
+            color:" ring-slate-300 "
         },
         {
             link: "/resume",
-            linkName: "Resume"
+            linkName: "Resume",
+            color:" ring-slate-300"
         }
     ]
-    const buttonStyling = `flex space-x-3 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-200  font-semibold 
-    text-gray-900 rounded-tl-lg rounded-br-lg ring-2 ring-purple-800 px-4 py-2
-    hover:bg-white hover:text-white hover:ring-slate-300 mx-3 
-    focus:bg-slate-200 focus:text-indigo-800
-    hover:bg-slate-300 hover:text-purple-700 hover:ring-purple-800 navButtons`;
+    const buttonStyling = `navbar-buttons flex space-x-3 font-semibold bg-gradient-to-r from-violet-100 via-violet-200 to-violet-300
+    ring-1 rounded-tl-lg rounded-br-lg px-5 py-2 ring-2 ring-white`;
 
 
     return (
-        <div style={{ display: props.display ? "none" : "grid" }} className='bg-neutral-300'>
+
+        <div style={{ display: props.display ? "none" : "grid" }} className='bg-neutral-900'>
+
             <div>
                 <div className="portfolio--header">
                     {
@@ -57,7 +62,7 @@ const Navbar = props => {
                                     <div>
                                         <Link to={item.link}>
                                             <button
-                                                className={buttonStyling}>
+                                                className={`${buttonStyling} ${item.color}`}>
                                                 <p>{item.linkName}</p>
                                             </button>
                                         </Link>
@@ -71,8 +76,8 @@ const Navbar = props => {
                 <div className='grid grid-cols-1 place-items-center mb-5'>
                     <Flip right>
                         <button onClick={props.isDisplay}
-                            className="flex space-x-3 mr-2 font-semibold bg-gradient-to-r from-slate-100 via-slate-200 to-slate-200 
-                            text-gray-800 border-x-4 border-x-purple-700 rounded-tr-lg rounded-bl-lg px-5 py-2
+                            className="flex space-x-3 mr-2 font-semibold ring-1 ring-slate-300
+                            text-gray-200 rounded-tr-lg rounded-bl-lg px-5 py-2
                             hover:bg-white hover:ring-slate-300 mx-4 hover:text-indigo-600 ">Home</button>
                     </Flip>
                 </div>

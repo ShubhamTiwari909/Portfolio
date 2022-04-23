@@ -33,6 +33,9 @@
   .contactIcons{
     font-size: 2.5rem;
   }
+  .buttons {
+    
+  }
 
   @media screen and (min-width:250px) and (max-width:482px){
     .bg-image{
