@@ -58,7 +58,7 @@ const Navbar = props => {
                         NavButtons.map(item => {
                             return (
                                 <RubberBand>
-                                    <div>
+                                    <div key={item.link}>
                                         <Link to={item.link}>
                                             <button
                                                 className={`${buttonStyling} ${item.color}`}>
