@@ -67,7 +67,7 @@ function Blog() {
   ]
 
   const styling = `grid grid-cols-1 place-items-center bg-neutral-900
-   my-8 pb-10 px-3 mx-10 ring-4 ring-indigo-400 rounded-br-lg rounded-tl-lg shadow-xl shadow-slate-800 ${animate ? 'animate-spin' : ""}`
+   my-8 pb-10 mx-10 rounded-br-lg rounded-tl-lg shadow-xl shadow-slate-800 ${animate ? 'animate-spin' : ""}`
   return (
     <div className='bg-gradient-to-r from-neutral-200 via-neutral-300 to-neutral-400'>
       <h1 className='flex justify-center text-3xl text-slate-200 font-semibold bg-gradient-to-r from-slate-700 to-slate-900
@@ -86,7 +86,7 @@ function Blog() {
           return (
             <Fade bottom>
               <div key={item.Title} className={styling}>
-                <img src={item.BlogImage} alt="Blogs Thumbnail" className='border-2 border-b-blue-300' />
+                <img src={item.BlogImage} alt="Blogs Thumbnail" className='w-full' />
                 <h1 className='text-slate-200 text-md lg:text-lg md:text-lg text-center font-mono font-semibold py-6 border-b-2 border-solid border-indigo-300'>{item.Title}</h1>
                 <a href={item.BlogLink} target='_blank' rel="noreferrer"
                   className='ring-2 ring-indigo-300 rounded-md bg-gradient-to-r from-indigo-500 via-purple-700 to pink-800 

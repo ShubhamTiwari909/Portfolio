@@ -11,8 +11,7 @@ function Project() {
       ProjectLink: "https://relaxed-wright-c3ff59.netlify.app/",
       ProjectImage: Project2,
       Date: "December 2021",
-      LanguagesUsed: "HTML5, CSS3, JAVASCRIPT(ES6), TAILWIND, REACT JS",
-      API: "API USED : UNSPLASH API",
+      LanguagesUsed: ["HTML5", "CSS3", "JAVASCRIPT(ES6)", "TAILWIND", "REACT JS"],
       ProjectDescription: "This Project is related to Image searching and Downloading using unsplash Api. The searching is Done without Reloading the Page and it is responsive Design too"
     },
     {
@@ -20,8 +19,7 @@ function Project() {
       ProjectLink: "https://knowledge-earth2k99.netlify.app/",
       ProjectImage: Project1,
       Date: "January 2022",
-      LanguagesUsed: "HTM5L, CSS3, JAVASCRIPT(ES6), TAILWIND, REACT JS",
-      API: "API USED : WIKIPEDIA API",
+      LanguagesUsed: ["HTML5", "CSS3", "JAVASCRIPT(ES6)", "TAILWIND", "REACT JS"],
       ProjectDescription: "This Project is related to Wikipedia searching Api where a user can search things and then can read the whole content by redirecting to that wikipedia page and it also has a voice assistance"
     }
   ]
@@ -33,29 +31,39 @@ function Project() {
         <AiOutlineFundProjectionScreen size='2.5rem' style={{ margin: "0 1rem" }} />
       </h1>
 
+
       <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 place-items-center my-5 py-5'>
         {ProjectData.map(item => {
           return (
             <Tada>
-              <div key={item.ProjectTitle} className="grid grid-cols-1 justify-items-center bg-neutral-900
-            my-8 pb-10 px-3 mx-10 ring-2 ring-indigo-400 rounded-md shadow-xl shadow-slate-400">
-                <img src={item.ProjectImage} alt="Blogs Thumbnail" className='border-2 border-b-blue-300' />
-                <div className='grid grid-cols-1 place-items-start'>
-                  <h1 className='text-slate-200 text-md font-mono font-semibold my-3 lg:my-6 px-4 py-2 border-l-2 border-solid border-indigo-300'>Project : {item.ProjectTitle}</h1>
-                  <h1 className='text-slate-200 text-md font-mono font-semibold my-3 lg:my-6 px-4 py-2 border-l-2 border-solid border-indigo-300'>Languages : {item.LanguagesUsed}</h1>
-                  <h1 className='text-slate-200 text-md font-mono font-semibold my-3 lg:my-6 px-4 py-2 border-l-2 border-solid border-indigo-300'>{item.API}</h1>
-                  <h1 className='text-slate-200 text-md font-mono font-semibold my-3 lg:my-6 px-4 py-2 border-l-2 border-solid border-indigo-300'>{item.ProjectDescription}</h1>
+              <div class="max-w-sm bg-neutral-800 rounded-lg overflow-hidden shadow-2xl shadow-slate-800 my-8">
+                <img class="w-full" src={item.ProjectImage} alt="Blogs Thumbnail" />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 text-indigo-100">{item.ProjectTitle}</div>
+                  <p class="text-indigo-200 text-base">
+                    {item.ProjectDescription}
+                  </p>
                 </div>
-                <a href={item.ProjectLink} target='_blank' rel="noreferrer"
-                  className='ring-2 ring-indigo-300 rounded-md bg-gradient-to-r from-indigo-500 via-purple-700 to pink-800 
+                <div class="text-center my-5 px-6 py-4">
+                  <a href={item.ProjectLink} target='_blank' rel="noreferrer"
+                    className='bg-gradient-to-tr from-gray-900 via-purple-900 to-violet-600 ring-2 ring-indigo-600 rounded-md
               py-2 px-5 my-10 text-slate-200 font-bold'>Open Project</a>
-                <h2 className='text-slate-200 py-6'>Date Published : {item.Date}</h2>
+                  <h2 className='text-slate-200 py-6'>Date Published : {item.Date}</h2>
+                </div>
+                <div class="px-6 pt-4 pb-2 flex flex-wrap">
+                  {item.LanguagesUsed.map(language => {
+                    return (
+                      <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{language}</span>
+                    )
+                  })}
+                </div>
               </div>
             </Tada>
           )
         })
         }
       </div>
+
     </div>
   )
 }
