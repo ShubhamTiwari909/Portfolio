@@ -1,7 +1,22 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
+
+// animations
 import RubberBand from 'react-reveal/RubberBand';
 import Flip from 'react-reveal/Flip';
+
+// icons
+import { AiOutlineCodepen } from 'react-icons/ai'
+import { BsFilePerson } from 'react-icons/bs'
+import { GiSkills } from 'react-icons/gi'
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
+import { SiBlogger } from 'react-icons/si'
+import { MdOutlineConnectWithoutContact } from 'react-icons/md'
+import {FcHome} from 'react-icons/fc'
+import { FcDocument } from 'react-icons/fc'
+import {FaHamburger} from 'react-icons/fa'
+
+// components
 import About from './About'
 import Blog from './Blog'
 import Contact from './Contact'
@@ -13,75 +28,108 @@ import './Portfolio.css'
 
 const Navbar = props => {
 
+    const [isActive, setisActive] = React.useState(false);
+
     const NavButtons = [
         {
             link: "/about",
-            linkName: "About",
-            color:" ring-slate-300 "
+            linkName:"About",
+            linkIcon: <BsFilePerson color="white" size="1.5rem" />,
+            color: " ring-slate-300 "
         },
         {
             link: "/skills",
-            linkName: "Skills",
+            linkName:"Skills",
+            linkIcon: <GiSkills size="1.5rem" />,
             color: " ring-slate-300 "
         },
         {
             link: "/projects",
-            linkName: "Projects",
+            linkName:"Project",
+            linkIcon: <AiOutlineFundProjectionScreen size="1.5rem" />,
             color: " ring-slate-300 "
         },
         {
             link: "/blogs",
-            linkName: "Blogs",
+            linkName:"Blogs",
+            linkIcon: <SiBlogger size="1.5rem" />,
             color: " ring-slate-300 "
         },
         {
             link: "/contact",
-            linkName: "Contact",
-            color:" ring-slate-300 "
+            linkName:"Contact",
+            linkIcon: <MdOutlineConnectWithoutContact size="1.5rem" />,
+            color: " ring-slate-300 "
         },
         {
             link: "/resume",
-            linkName: "Resume",
-            color:" ring-slate-300"
+            linkName:"Resume",
+            linkIcon: <FcDocument size="1.5rem" />,
+            color: " ring-slate-300"
         }
     ]
-    const buttonStyling = `gradient-border flex space-x-3 font-semibold text-slate-200 px-5 py-2`;
+    const buttonStyling = `gradient-border flex justify-content-center font-semibold text-slate-200 px-3 py-2  my-3`;
 
 
     return (
 
         <div style={{ display: props.display ? "none" : "grid" }} className='bg-neutral-900'>
+            <nav className="navbar bg-neutral-900" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <div className="navbar-item">
+                        <AiOutlineCodepen color="cyan" size="2rem" />
+                    </div>
 
-            <div>
-                <div className="portfolio--header">
-                    {
-                        NavButtons.map(item => {
-                            return (
-                                <RubberBand>
-                                    <div key={item.link}>
-                                        <Link to={item.link}>
-                                            <button
-                                                className={`${buttonStyling} ${item.color}`}>
-                                                <p>{item.linkName}</p>
-                                            </button>
-                                        </Link>
-                                    </div>
-                                </RubberBand>
-                            )
-                        })
-
-                    }
-                </div>
-                <div className='grid grid-cols-1 place-items-center mb-5'>
-                    <Flip right>
-                        <button onClick={props.isDisplay}
-                            className="flex space-x-3 mr-2 font-semibold ring-1 ring-slate-300
-                            text-gray-200 rounded-tr-lg rounded-bl-lg px-5 py-2
-                            hover:bg-white hover:ring-slate-300 mx-4 hover:text-indigo-600 ">Home</button>
-                    </Flip>
+                    <button
+                        onClick={() => {
+                            setisActive(!isActive);
+                        }}
+                        className={`navbar-burger burger ${isActive ? "is-active" : ""} `}
+                        aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <FaHamburger color="white" size="1.5rem" />
+                    </button>
                 </div>
 
-            </div>
+                <div id="navbarBasicExample" className={`navbar-menu ${isActive ? "is-active" : ""} bg-neutral-900`}>
+                    <div className="navbar-start">
+                        <div className="navbar-item">
+                            <div className="portfolio--header">
+                                {
+                                    NavButtons.map(item => {
+                                        return (
+                                            <RubberBand>
+                                                <div key={item.link} className="lg:mx-5">
+                                                    <Link to={item.link}>
+                                                        <button
+                                                            className={`${buttonStyling} ${item.color}`}>
+                                                            <p className="mx-2">{item.linkName}</p>
+                                                            <p>{item.linkIcon}</p>
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </RubberBand>
+                                        )
+                                    })
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="navbar-end">
+                        <div className='grid grid-cols-1 place-items-center'>
+                            <Flip right>
+                                <button onClick={props.isDisplay}
+                                    className="flex space-x-3 mr-2 font-semibold ring-1 ring-slate-300
+                            text-gray-200 rounded-full px-5 py-2
+                            hover:bg-white hover:ring-slate-300 mx-4 hover:text-indigo-600 ">
+                                <FcHome size="2rem" />
+                            </button>
+                            </Flip>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
             <div>
                 <Routes>

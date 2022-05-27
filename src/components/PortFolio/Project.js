@@ -32,11 +32,11 @@ function Project() {
       </h1>
 
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 place-items-center my-5 py-5'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 place-items-center my-5 py-5'>
         {ProjectData.map(item => {
           return (
             <Tada>
-              <div class="max-w-sm bg-neutral-800 rounded-lg overflow-hidden shadow-2xl shadow-slate-800 my-8">
+              <div class="max-w-sm mx-5 bg-neutral-800 rounded-lg overflow-hidden shadow-2xl shadow-slate-800 my-8">
                 <img class="w-full" src={item.ProjectImage} alt="Blogs Thumbnail" />
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2 text-indigo-100">{item.ProjectTitle}</div>
@@ -44,13 +44,13 @@ function Project() {
                     {item.ProjectDescription}
                   </p>
                 </div>
-                <div class="text-center my-5 px-6 py-4">
+                <div class="text-center my-3 px-6 py-4">
                   <a href={item.ProjectLink} target='_blank' rel="noreferrer"
                     className='bg-gradient-to-tr from-gray-900 via-purple-900 to-violet-600 ring-2 ring-indigo-600 rounded-md
               py-2 px-5 my-10 text-slate-200 font-bold'>Open Project</a>
                   <h2 className='text-slate-200 py-6'>Date Published : {item.Date}</h2>
                 </div>
-                <div class="px-6 pt-4 pb-2 flex flex-wrap">
+                <div class="px-6 pb-2 flex flex-wrap">
                   {item.LanguagesUsed.map(language => {
                     return (
                       <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{language}</span>
