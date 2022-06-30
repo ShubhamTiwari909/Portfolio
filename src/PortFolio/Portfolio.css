@@ -1,0 +1,48 @@
+.portfolio--header {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.3rem;
+    margin: 2rem 0;
+}
+
+.Landing--Page {
+    display: grid;
+    place-items: center;
+    height: 89vh;
+    background-image: url('./images/Main.png');
+    background-size: cover;
+}
+
+.photoHeading {
+    display: none;
+}
+
+.gradient-border {
+    border: 2px solid;
+    border-image: linear-gradient(#b993d6, #8ca6db, #ea96c4) 1;
+    animation: rotate 3.5s ease-in infinite;
+}
+
+@keyframes rotate {
+    50% {
+        border-image: linear-gradient(360deg,#ff512f, #dd2476, #1c64ff) 1;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:768px) {
+    .Landing--Page {
+        height: 84vh;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMlJSDZ8Zp2v1xT2BDtsbrAGc7cRHzNzbUkQ&usqp=CAU');
+    }
+
+    .portfolio--header {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photoHeading {
+        display: block;
+    }
+
+}
